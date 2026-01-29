@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ishita Thakre | Computer Science Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #f9fafb;
+      transition: background 0.4s, color 0.4s;
+      overflow-x: hidden;
+    }
+
+    body.light {
+      background: #f4f6f8;
+      color: #111827;
+    }
+
+    /* Floating shapes */
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: float 8s infinite alternate ease-in-out;
+      z-index: -1;
+    }
+
+    .shape.one {
+      width: 300px;
+      height: 300px;
+      background: rgba(56, 189, 248, 0.5);
+      top: 10%;
+      left: -100px;
+    }
+
+    .shape.two {
+      width: 350px;
+      height: 350px;
+      background: rgba(34, 197, 94, 0.5);
+      bottom: 10%;
+      right: -120px;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-40px); }
+    }
+
+    /* Header */
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      background: linear-gradient(90deg, #38bdf8, #22c55e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      background: #111827;
+      color: #fff;
+    }
+
+    body.light .toggle {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    /* Sections */
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 4rem 2rem;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Skills */
+    .skill {
+      margin-bottom: 1.5rem;
+    }
+
+    .skill span {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.3rem;
+    }
+
+    .bar {
+      width: 100%;
+      height: 12px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    body.light .bar {
+      background: #d1d5db;
+    }
+
+    .fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #38bdf8, #22c55e);
+      border-radius: 10px;
+      transition: width 1.2s ease;
+    }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.08);
+      padding: 2rem;
+      border-radius: 16px;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    body.light .card {
+      background: #ffffff;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Background -->
+  <div class="shape one"></div>
+  <div class="shape two"></div>
+
+  <!-- Header -->
+  <header>
+    <button class="toggle" onclick="toggleTheme()">🌙 / ☀</button>
+    <h1>Ishita Thakre</h1>
+    <p>Computer Science Engineer • Hackoweek Participant</p>
+  </header>
+
+  <!-- About -->
+  <section>
+    <h2>About Me</h2>
+    <p>
+      I am a Computer Science Engineering student passionate about software
+      development, problem-solving, and building impactful projects.
+      Hackoweek helped me turn ideas into real-world applications.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section>
+    <h2>Skills</h2>
+
+    <div class="skill">
+      <span><strong>HTML & CSS</strong><strong>90%</strong></span>
+      <div class="bar"><div class="fill" data-level="90"></div></div>
+    </div>
+
+    <div class="skill">
+      <span><strong>JavaScript</strong><strong>80%</strong></span>
+      <div class="bar"><div class="fill" data-level="80"></div></div>
+    </div>
+
+    <div class="skill">
+      <span><strong>React</strong><strong>75%</strong></span>
+      <div class="bar"><div class="fill" data-level="75"></div></div>
+    </div>
+
+    <div class="skill">
+      <span><strong>Problem Solving</strong><strong>90%</strong></span>
+      <div class="bar"><div class="fill" data-level="90"></div></div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section>
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Hackoweek Project 🚀</h3>
+        <p>A collaborative project solving a real-world problem using modern technologies.</p>
+      </div>
+
+      <div class="card">
+        <h3>Personal Portfolio</h3>
+        <p>Responsive and animated portfolio website using HTML, CSS, and JavaScript.</p>
+      </div>
+
+      <div class="card">
+        <h3>Creative App</h3>
+        <p>An experimental app focused on UI animations and user experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section>
+    <h2>Contact</h2>
+    <p>Email: ishita.thakre.batch2025@sitnagpur.siu.edu.in</p>
+  </section>
+
+  <footer>
+    © 2026 Ishita Thakre • Built for Hackoweek
+  </footer>
+
+  <script>
+    // Dark / Light mode
+    function toggleTheme() {
+      document.body.classList.toggle("light");
+    }
+
+    // Scroll animations
+    const sections = document.querySelectorAll("section");
+    const bars = document.querySelectorAll(".fill");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+
+          entry.target.querySelectorAll(".fill").forEach(bar => {
+            bar.style.width = bar.dataset.level + "%";
+          });
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+</body>
+</html>
