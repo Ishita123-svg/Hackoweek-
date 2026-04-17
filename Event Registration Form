@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tech Fest Registration</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+
+    /* Graphic Background */
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+/* Animated background circles */
+body::before, body::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(0,255,255,0.2);
+    filter: blur(100px);
+    animation: move 10s infinite alternate;
+}
+
+body::after {
+    background: rgba(255,0,150,0.2);
+    top: 60%;
+    left: 60%;
+}
+
+@keyframes move {
+    from { transform: translate(0,0); }
+    to { transform: translate(100px, -100px); }
+}
+
+/* Form Container */
+.container {
+    width: 90%;
+    max-width: 450px;
+    margin: 60px auto;
+    padding: 25px;
+    border-radius: 15px;
+
+    /* Glass Effect */
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 25px rgba(0,255,255,0.3);
+}
+
+/* Heading */
+.container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00ffff;
+}
+
+/* Input fields */
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #ccc;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #00ffff, #ff0099);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00ffff;
+}
+
+/* Label */
+label {
+    font-size: 14px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🚀 Tech Fest Registration</h1>
+
+    <form>
+
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <label>Phone Number</label>
+        <input type="tel" placeholder="Enter your number" required>
+
+        <label>College Name</label>
+        <input type="text" placeholder="Your college name" required>
+
+        <label>Select Event</label>
+        <select required>
+            <option value="">-- Choose Event --</option>
+            <option>Coding Competition</option>
+            <option>Hackathon</option>
+            <option>Robotics</option>
+            <option>Gaming Tournament</option>
+        </select>
+
+        <label>Year of Study</label>
+        <select required>
+            <option value="">-- Select Year --</option>
+            <option>1st Year</option>
+            <option>2nd Year</option>
+            <option>3rd Year</option>
+            <option>Final Year</option>
+        </select>
+
+        <label>Message (Optional)</label>
+        <textarea rows="3" placeholder="Any message..."></textarea>
+
+        <button type="submit">Register Now</button>
+
+    </form>
+</div>
+
+</body>
+</html>
